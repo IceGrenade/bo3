@@ -18,7 +18,7 @@ function ice_Credit()
     start_message4 = "^1Don't forget to Upvote :)";
     looping_message1 = "^1Made by Bob";
     looping_message2 = "^1Buy me coffee;
-	  level flag::wait_till( "initial_blackscreen_passed" );
+    level flag::wait_till( "initial_blackscreen_passed" );
     wait 3;
     thread screen_text (start_message1, 2, 2 );
     wait 3;
