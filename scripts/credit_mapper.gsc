@@ -5,6 +5,8 @@
 
 thread ice_Credit();
 
+//Modify the Message content
+
 //Important:
 //To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
 //Authors: IceGrenade
@@ -12,12 +14,14 @@ thread ice_Credit();
 
 function ice_Credit()
 {
+    //Modify these messages to suit your needs
     start_message1 = "^1Welcome to my map";
     start_message2 = "^1Map Name";
     start_message3 = "^1Enjoy this challenge";
     start_message4 = "^1Don't forget to Upvote :)";
     looping_message1 = "^1Made by Bob";
     looping_message2 = "^1Buy me coffee;
+    
     level flag::wait_till( "initial_blackscreen_passed" );
     wait 3;
     thread screen_text (start_message1, 2, 2 );
