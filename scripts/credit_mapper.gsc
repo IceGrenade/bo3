@@ -2,7 +2,8 @@
 //To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
 //Authors: IceGrenade
 
-//This code snippet is not for beginners, some prior knowledge is assumed
+//Difficulty to Implement = 3/10 (This code snippet is not for beginners, some prior knowledge is assumed)
+//[0=Easy-10=Advanced]
 
 //Instructions:
 //Place this at the bottom of your Main() function before the closing bracket (})
