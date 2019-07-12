@@ -1,3 +1,7 @@
+//Important:
+//To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+//Authors: IceGrenade
+
 //This code snippet is not for beginners, some prior knowledge is assumed
 
 //Instructions:
@@ -6,11 +10,8 @@
 thread ice_Credit();
 
 //Modify the Message content
-
-//Important:
-//To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
-
+//Use ^1 to change the colour of the text to red
+//Colour codes: ^1 red, ^2 green, ^3 yellow, ^4 blue, ^5 light blue, ^6 = purple, ^7 = white, ^8 Dark Blue, ^9 = grey, ^0 = black
 
 function ice_Credit()
 {
@@ -19,8 +20,8 @@ function ice_Credit()
     start_message2 = "^1Map Name";
     start_message3 = "^1Enjoy this challenge";
     start_message4 = "^1Don't forget to Upvote :)";
-    looping_message1 = "^1Made by Bob";
-    looping_message2 = "^1Buy me coffee;
+    looping_message1 = "Made by Bob";
+    looping_message2 = "Buy me coffee and you will be loved";
     
     level flag::wait_till( "initial_blackscreen_passed" );
     wait 3;
