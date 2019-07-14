@@ -5,15 +5,14 @@
 //Difficulty to Implement = 3/10 (This code snippet is not for beginners, some prior knowledge is assumed)
 //[0=Easy-10=Advanced]
 
+//Requires the following functions:
+//https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
+
 //Instructions:
 //Place this at the bottom of your Main() function before the closing bracket (})
-
 thread ice_Credit();
 
-//Modify the Message content
-//Use ^1 to change the colour of the text to red
-//Colour codes: ^1 red, ^2 green, ^3 yellow, ^4 blue, ^5 light blue, ^6 = purple, ^7 = white, ^8 Dark Blue, ^9 = grey, ^0 = black
-
+//Place this at the bottom of your mapname.gsc
 function ice_Credit()
 {
     //Modify these messages to suit your needs
@@ -41,26 +40,4 @@ function ice_Credit()
         iPrintLn(looping_message2);
         wait 60;
     }
-}
-
-function screen_text(text,font_scale,fade_time)
-{
-    hud = NewHudElem();
-    hud.foreground = true;
-    hud.fontScale = font_scale;
-    hud.sort = 1;
-    hud.hidewheninmenu = false;
-    hud.alignX = "center";
-    hud.alignY = "middle";
-    hud.horzAlign = "center";
-    hud.vertAlign = "middle";
-    hud.x = 0;
-    hud.y = hud.y - 100;
-    hud.alpha = 1;
-    hud SetText(text);
-    wait(2);
-    hud fadeOverTime(fade_time);
-    hud.alpha = 0;
-    wait(fade_time);
-    hud Destroy();
 }
