@@ -41,14 +41,14 @@ function givegold()
 	inflictor.score += 400;
 	self Delete();
 	level.gold += 1;
-	thread screen_text ("^2Gold found: ^4"+level.gold+"/"+level.totalgold, 0, 150, 2, 1 );
+	thread screen_text ("^2Gold found: ^4"+level.gold+"/"+level.totalgold, 2, 1 );
 	if(level.gold == 20)
 		thread allperks();
 	if(level.gold == level.totalgold)
 	{
 		i=0;
 		wait 0.5;
-		thread screen_text ("^1ALL GOLD FOUND!", 0, 50, 3, 2 );
+		thread screen_text ("^1ALL GOLD FOUND!", 3, 2 );
 		foreach (player in GetPlayers())
 			player thread giveTotalReward();
 	}
@@ -68,7 +68,7 @@ function giveTotalReward()
 
 function allperks()
 {
-	thread screen_text ("^1Free Perks Activated!", 0, 50, 3, 2 );
+	thread screen_text ("^1Free Perks Activated!", 3, 2 );
 	perkplaces  = struct::get_array("perkplace", "targetname");
 	player1 = GetPlayers()[0];
 	player1 PlaySound("zmb_buildable_complete");
