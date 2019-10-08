@@ -8,12 +8,16 @@
 //Requires the following functions:
 //https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
 
+//Details
+// This script rewards players with all perks and points.
+// You can set it to give different rewards and messages with the variables.
+
 //Instructions:
 // 1. Modify the Message content
 //       Use ^1 to change the colour of the text to red
 //       Colour codes: ^1 red, ^2 green, ^3 yellow, ^4 blue, ^5 light blue, ^6 = purple, ^7 = white, ^8 Dark Blue, ^9 = grey, ^0 = black
 // 2. Add a trigger in the map where this reward can be activated or comment out all 'gaperk' lines to have it reward instantly when called with thread iceGrenade_AllPerks();
-// 3. Lines 25-35 Set whatever variables you like. Messages / trigger text / reward type / amount / sound
+// 3. Lines 28-38 Set whatever variables you like. Messages / trigger text / reward type / amount / sound
 
 //Place this at the bottom of your Main() function before the closing bracket (})
 thread iceGrenade_AllPerks();
