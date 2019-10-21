@@ -33,8 +33,8 @@ function ice_AutoZones()
 
 function triggerZone(ztarg)
 {
-    runit = GetEnt( ztarg, "targetname");
-    runit waittill("trigger", player);
-    level flag::set( ztarg );
-    break;
+	runit = GetEnt( ztarg, "targetname");
+	runit waittill("trigger", player);
+	level flag::set( ztarg );
+	break;
 }
