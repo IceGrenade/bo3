@@ -1,6 +1,6 @@
 //Important:
 //To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
+//Authors: IceGrenade, Symbo
 
 //Difficulty to Implement = 4/10 (This code snippet is not for beginners, some prior knowledge is assumed)
 //[0=Easy-10=Advanced]
@@ -61,12 +61,24 @@ function iceGrenade_AllPerks()
             player.score += reward_amount_3;
         else
             player.score += reward_amount_4;
+        //Reward each player with all perks
+        player give_all_perks();
     }
 
     //Activated Reward Message on-screen
     thread screen_text (activated_message, 2, 4 );
+}
 
-    //Give reward X perk limit set
-    for (i = 0; i < level.perk_purchase_limit; i++)
-        zm_powerups::specific_powerup_drop( reward_type, GetPlayers()[0].origin);
+function give_all_perks()
+{
+    a_str_perks = GetArrayKeys( level._custom_perks );
+    foreach( str_perk in a_str_perks )
+    {
+        if( !self HasPerk( str_perk ) )
+        {
+            self zm_perks::give_perk( str_perk, false );
+            if (isdefined(level.perk_bought_func))
+                self [[ level.perk_bought_func ]]( str_perk );
+        }
+    }
 }
