@@ -6,8 +6,6 @@ You can setup up to 4 different variations of light setups
 
 Add this under where your power turns on. Can also add one with the value 0 in your main function to set it to 0. (0=1, 1=2) so in radiant setting lightstate 1 enabled on a light (means it will be turned on if you set the code lightstate to 0). and 1 =2 vice versa
     level util::set_lighting_state( 1 );
-    
-* How I have my Lightstates setup
 
 //I have mine setup with a function I call in main usually, put this at the bottom of your mapname.gsc:
     function iceGrenade_PowerLights()
