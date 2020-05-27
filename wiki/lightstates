@@ -24,8 +24,8 @@ Add this under where your power turns on. Can also add one with the value 0 in y
 
 //then put:
     thread iceGrenade_PowerLights();
-
 //at the bottom of your Main() before it closes }
+
 //^this code means before you turn on power, it will have the lightstate 1 enabled.
 //Then when you turn on power it will flip to lightstate 2.
 //This is also an option you need to setup on your sun volume.
