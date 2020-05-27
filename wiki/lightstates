@@ -1,6 +1,8 @@
-IceGrenade, how do I setup Lightstates?
+Q: IceGrenade, how do I setup Lightstates?
 
-You can add this code to enable a certain lightstate. You can setup up to 4 different variations of light setups (whether you want lights on or off enabled with code, this also will change your sun volume ssi setting)
+A: You can add this code to enable a certain lightstates.
+You can setup up to 4 different variations of light setups
+(whether you want lights on or off enabled with code, this also will change your sun volume ssi setting)
 
 Add this under where your power turns on. Can also add one with the value 0 in your main function to set it to 0. (0=1, 1=2) so in radiant setting lightstate 1 enabled on a light (means it will be turned on if you set the code lightstate to 0). and 1 =2 vice versa
     level util::set_lighting_state( 1 );
@@ -8,22 +10,22 @@ Add this under where your power turns on. Can also add one with the value 0 in y
 * How I have my Lightstates setup
 
 //I have mine setup with a function I call in main usually, put this at the bottom of your mapname.gsc:
-function iceGrenade_PowerLights()
-{
-    self endon("death");
-    level endon("end_game");
-
-    for(;;)
+    function iceGrenade_PowerLights()
     {
-        level util::set_lighting_state( 0 );
-        level flag::wait_till( "power_on" );
-        level util::set_lighting_state( 1 );
-        level flag::wait_till_clear( "power_on" );
-    }
-}   
+        self endon("death");
+        level endon("end_game");
+
+        for(;;)
+        {
+            level util::set_lighting_state( 0 );
+            level flag::wait_till( "power_on" );
+            level util::set_lighting_state( 1 );
+            level flag::wait_till_clear( "power_on" );
+        }
+    }   
 
 //then put:
-thread iceGrenade_PowerLights();
+    thread iceGrenade_PowerLights();
 
 //at the bottom of your Main() before it closes }
 //^this code means before you turn on power, it will have the lightstate 1 enabled.
