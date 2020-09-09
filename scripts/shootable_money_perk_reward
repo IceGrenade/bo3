@@ -9,7 +9,7 @@
 //https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
 
 //Instructions:
-// 1. Modify the Message content (More info on screen_text script: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text
+// 1. Modify the Message content (More info on screen_text script: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text)
 // 2. Place any number of script_models in radiant with the target name of 'gold'
 // 3. Change the sound or add sound with alias of 'goldsound' for each shot gold
 // 4. Give all door parts the name of "door_piece" this includes the script_brushmodels and script_models that make the door
@@ -41,12 +41,8 @@ function givegold()
 	self Delete();
 	level.gold += 1;
 	//thread screen_text ("^2Gold found: ^4"+level.gold+"/"+level.totalgold, 2, 1 );
-	if(level.gold == 20)
-		thread allperks();
 	if(level.gold == level.totalgold)
 	{
-		i=0;
-		wait 0.5;
 		//thread screen_text ("^1ALL GOLD FOUND!", 3, 2 );
 		foreach (player in GetPlayers())
 			player thread give_player_all_perks();
