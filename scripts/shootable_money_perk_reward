@@ -1,6 +1,6 @@
 //Important:
 //To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
+//Authors: IceGrenade / Symbo
 
 //Difficulty to Implement = 4/10 (This code snippet is not for beginners, some prior knowledge is assumed)
 //[0=Easy-10=Advanced]
@@ -9,14 +9,13 @@
 //https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
 
 //Instructions:
-// 1. Modify the Message content
-//       Use ^1 to change the colour of the text to red
-//       Colour codes: ^1 red, ^2 green, ^3 yellow, ^4 blue, ^5 light blue, ^6 = purple, ^7 = white, ^8 Dark Blue, ^9 = grey, ^0 = black
+// 1. Modify the Message content (More info on screen_text script: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text
 // 2. Place any number of script_models in radiant with the target name of 'gold'
-// 3. hange the sound or add sound with alias of 'goldsound' for each shot gold, add sound for perk reward of 'weaponcycle'
-// 4. (Optional) Set fx alias for shots and drops
+// 3. Change the sound or add sound with alias of 'goldsound' for each shot gold
+// 4. Give all door parts the name of "door_piece" this includes the script_brushmodels and script_models that make the door
 
 //Place this at the bottom of your Main() function before the closing bracket (})
+
 thread ice_Money();
 
 //Place this at the bottom of your mapname.gsc
@@ -41,42 +40,38 @@ function givegold()
 	inflictor.score += 400;
 	self Delete();
 	level.gold += 1;
-	thread screen_text ("^2Gold found: ^4"+level.gold+"/"+level.totalgold, 2, 1 );
+	//thread screen_text ("^2Gold found: ^4"+level.gold+"/"+level.totalgold, 2, 1 );
 	if(level.gold == 20)
 		thread allperks();
 	if(level.gold == level.totalgold)
 	{
 		i=0;
 		wait 0.5;
-		thread screen_text ("^1ALL GOLD FOUND!", 3, 2 );
+		//thread screen_text ("^1ALL GOLD FOUND!", 3, 2 );
 		foreach (player in GetPlayers())
-			player thread giveTotalReward();
+			player thread give_player_all_perks();
+		door = GetEntArray("door_piece", "targetname");
+		foreach(part in door)
+			part Delete();
 	}
 }
 
-function giveTotalReward()
+function give_player_all_perks()
 {
-	i=0;
-	while(i<100)
-	{
-		self PlaySound("goldsound");
-		self.score += 300;
-		i++;
-		wait 0.05;
-	}
-}
-
-function allperks()
-{
-	thread screen_text ("^1Free Perks Activated!", 3, 2 );
-	perkplaces  = struct::get_array("perkplace", "targetname");
-	player1 = GetPlayers()[0];
-	player1 PlaySound("zmb_buildable_complete");
-	foreach(perk in perkplaces)
-	{
-		zm_powerups::specific_powerup_drop( "free_perk", perk.origin);
-		PlayFX(level._effect["powerup_grabbed_red"], perk.origin);
-		wait 0.2;
-	}
-	player1 PlaySound("weapon_cycle");
+    for( i=0;i<25;i++ )
+    {
+        self PlaySound( "goldsound" );
+        self.score += 200;
+        wait 0.20;
+    }
+    a_str_perks = GetArrayKeys( level._custom_perks );
+    foreach( str_perk in a_str_perks )
+    {
+        if( !self HasPerk( str_perk ) )
+        {
+            self zm_perks::give_perk( str_perk, false );
+            if (isdefined(level.perk_bought_func))
+                self [[ level.perk_bought_func ]]( str_perk );
+        }
+    }
 }
