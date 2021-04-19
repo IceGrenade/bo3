@@ -1,16 +1,16 @@
-//Description
-//When users walk into certain trigger multiples you can enable zones to open,
-//allowing you to remove doors from areas to make zoning more fluid
+/*
+	Description
+	When users walk into certain trigger multiples you can enable zones to open,
+	allowing you to remove doors from areas to make zoning more fluid
 
-//Important
-//To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
+	Important - To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+	Authors: IceGrenade
 
-//Difficulty to Implement = 2/10 (This code snippet is not for beginners, some prior knowledge is assumed)
-//[0=Easy-10=Advanced]
+	Difficulty to Implement = 2 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
 
-//Instructions
-//Add trigger_multiple triggers into your map with targetname equal to the zone flag
+	Instructions
+	Add trigger_multiple triggers into your map with targetname equal to the zone flag
+*/
 
 //Example Zone Flag Setup
 function usermap_test_zone_init()
