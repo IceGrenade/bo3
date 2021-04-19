@@ -6,13 +6,15 @@
 	Important - To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
 	Authors: IceGrenade
 
-	Difficulty to Implement = 2 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
+	Difficulty to Implement = 3 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
 
 	Instructions
-	Add trigger_multiple triggers into your map with targetname equal to the zone flag
+	Add trigger_multiple triggers into your map with
+	targetname = "auto_zone"
+	script_string = the zone flag you wish to activate
 */
 
-//Example Zone Flag Setup
+//Example Zone Flag Setup - Add your custom adjacent_zone lines to this existing function
 function usermap_test_zone_init()
 {
 	zm_zonemgr::add_adjacent_zone("start_zone", "zone2", "zone2flag");
@@ -22,19 +24,18 @@ function usermap_test_zone_init()
 }	
 
 //Place this at the bottom of your Main() function before the closing bracket }
-thread ice_AutoZones();
+thread icegrenade_automatic_zones();
 
 //Place this at the bottom of your mapname.gsc
-function ice_AutoZones()
+function icegrenade_automatic_zones()
 {
-	thread triggerZone("zone2flag"); //example targetname of trigger_multiple
-	thread triggerZone("zone3flag");
+	auto_zones = GetEntArray("auto_zone", "targetname");
+	foreach(zone in auto_zones)
+		zone auto_zone_logic();
 }
 
-function triggerZone(ztarg)
+function auto_zone_logic()
 {
-	runit = GetEnt( ztarg, "targetname");
 	runit waittill("trigger", player);
-	level flag::set( ztarg );
-	break;
+	level flag::set( self.script_string );
 }
