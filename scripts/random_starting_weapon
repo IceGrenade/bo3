@@ -1,10 +1,11 @@
-//Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
+/*
+    Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+    Authors: IceGrenade
 
-//Difficulty to Implement = 0
-//[0=Easy-10=Advanced]
+    Difficulty to Implement = 0 [0=Easy-10=Advanced]
 
-//Place this inside your mapname.gsc in the Main() function:
+    Place this inside your mapname.gsc in the Main() function
+*/
 
 random_weapon_list = array("wpn_custom_viking_axe_01", "wpn_custom_viking_axe_02", "wpn_custom_viking_hammer_01");
 level.start_weapon = ( getWeapon( array::randomize(random_weapon_list)[0] ) );
