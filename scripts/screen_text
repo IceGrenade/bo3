@@ -1,18 +1,16 @@
-//Important:
-//To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
+/*
+	Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+	Authors: IceGrenade
 
-//Difficulty to Implement = 2/10 (This code snippet is not for beginners, some prior knowledge is assumed)
-//[0=Easy-10=Advanced]
+	Difficulty to Implement = 2 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
 
-//Instructions:
-//Thread this wherever you would like to print to the screen
+	Instructions: Thread this wherever you would like to print to the screen
+	thread screen_text ("^1This is a message on screen", 2, 2 );
 
-thread screen_text ("^1This is a message on screen", 2, 2 );
-
-//Modify the Message content
-//Use ^1 to change the colour of the text to red
-//Colour codes: ^1 red, ^2 green, ^3 yellow, ^4 blue, ^5 light blue, ^6 = purple, ^7 = white, ^8 Dark Blue, ^9 = grey, ^0 = black
+	Modify the Message content
+		Use ^1 to change the colour of the text to red
+		Colour codes: ^1 red, ^2 green, ^3 yellow, ^4 blue, ^5 light blue, ^6 = purple, ^7 = white, ^8 Dark Blue, ^9 = grey, ^0 = black
+*/
 
 //Place this at the bottom of your mapname.gsc
 function screen_text(text,font_scale,fade_time)
