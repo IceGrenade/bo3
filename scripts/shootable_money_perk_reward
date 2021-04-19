@@ -1,21 +1,20 @@
-//Important:
-//To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade / Symbo
+/*
+	Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+	Authors: IceGrenade / Symbo
 
-//Difficulty to Implement = 4/10 (This code snippet is not for beginners, some prior knowledge is assumed)
-//[0=Easy-10=Advanced]
+	Difficulty to Implement = 4 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
 
-//Requires the following functions:
-//https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
+	Requires the following functions:
+	https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
 
-//Instructions:
-// 1. Modify the Message content (More info on screen_text script: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text)
-// 2. Place any number of script_models in radiant with the target name of 'gold'
-// 3. Change the sound or add sound with alias of 'goldsound' for each shot gold
-// 4. Give all door parts the name of "door_piece" this includes the script_brushmodels and script_models that make the door
+	Instructions:
+	 1. Modify the Message content (More info on screen_text script: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text)
+	 2. Place any number of script_models in radiant with the target name of 'gold'
+	 3. Change the sound or add sound with alias of 'goldsound' for each shot gold
+	 4. Give all door parts the name of "door_piece" this includes the script_brushmodels and script_models that make the door
+*/
 
 //Place this at the bottom of your Main() function before the closing bracket (})
-
 thread ice_Money();
 
 //Place this at the bottom of your mapname.gsc
