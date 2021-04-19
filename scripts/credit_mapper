@@ -1,12 +1,11 @@
-//Important:
-//To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
-//Authors: IceGrenade
+/*
+	Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+	Authors: IceGrenade
 
-//Difficulty to Implement = 3/10 (This code snippet is not for beginners, some prior knowledge is assumed)
-//[0=Easy-10=Advanced]
+	Difficulty to Implement = 3 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
 
-//Requires the following functions:
-//https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
+	Requires the following functions: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
+*/
 
 //Instructions:
 //Place this at the bottom of your Main() function before the closing bracket (})
