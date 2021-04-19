@@ -1,0 +1,35 @@
+/*
+	Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+	Authors: IceGrenade
+
+	Difficulty to Implement = 2 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
+
+	Instructions: Thread this somewhere in your Main() function
+	thread special_weapons_gift();
+
+	Modify the content
+		Add as many instances of the condition checks for each person and setup however you like per person
+		Set any weapon of your choice as a reward / add/remove perk gifts. Can also give points too
+*/
+
+//Place this at the bottom of your mapname.gsc
+function special_weapons_gift()
+{
+    level flag::wait_till( "initial_blackscreen_passed" );
+    foreach(player in GetPlayers())
+    {
+    	lower_case_name = ToLower(player.name);
+        if(lower_case_name == ToLower("CoolPerson1"))
+        {
+            player thread give_specific_perk("specialty_armorvest");
+            player give_this_weapon("thundergun");
+            player.score += 1000;
+        }
+        if(lower_case_name == ToLower("CoolPerson1"))
+        {
+            player thread give_specific_perk("specialty_armorvest");
+            player give_this_weapon("thundergun");
+            player.score += 1000;
+        }
+    }
+}
