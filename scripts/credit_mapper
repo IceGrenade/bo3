@@ -7,7 +7,6 @@
 	Requires the following functions: https://github.com/IceGrenade/bo3/blob/master/scripts/screen_text.gsc
 */
 
-//Instructions:
 //Place this at the bottom of your Main() function before the closing bracket (})
 thread ice_Credit();
 
