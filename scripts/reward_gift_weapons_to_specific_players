@@ -33,3 +33,8 @@ function special_weapons_gift()
         }
     }
 }
+
+function give_this_weapon(weaponname)
+{
+    self zm_weapons::weapon_give(getweapon(weaponname));
+}
