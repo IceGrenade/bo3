@@ -17,7 +17,6 @@
 			a. It's also worth ticking EXPLOSION_NO on the trigger_damage so it isn't set off by grenades, this will stop all
 			explosive weapons though so you can decide if you want it on or not
 			b. If you have any problems/ questions message me on Discord xReaction#7551 or twitter @SFLReaction
-	
 */
 
 //Place this at the bottom of your Main() function before the closing bracket (})
