@@ -5,25 +5,23 @@
 	Difficulty to Implement = 4 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
 	
 	Details
-			This is a script that implements a trigger that can ONLY BE SHOT BY ONE WEAPON
-			The weapon can be changed to whatever you want it to be (look in zm_levelcommon_weapons.csv for weapon names)
+		This is a script that implements a trigger that can ONLY BE SHOT BY ONE WEAPON
+		The weapon can be changed to whatever you want it to be (look in zm_levelcommon_weapons.csv for weapon names)
 
 	Instructions:
-			1. Change the "pistol_standard" in the weapon_to_shoot_with variable to whatever gun you want it to be shot with
-			(default MR6)
-			2. Add a model/ brushmodel in the map with the targetname shootable_1weap_model
-			3. Add a trigger_damage, over the model/ brushmodel, with the targetname shootable_1weap_trig
-			Note: trigger MUST be trigger_damage otherwise it will not work properly!
-				  a. It's also worth ticking EXPLOSION_NO on the trigger_damage so it isn't set off by grenades, this will stop all
-				  explosive weapons though so you can decide if you want it on or not
-				  b. If you have any problems/ questions message me on Discord xReaction#7551 or twitter @SFLReaction
-
+		1. Change the "pistol_standard" in the weapon_to_shoot_with variable to whatever gun you want it to be shot with
+		(default MR6)
+		2. Add a model/ brushmodel in the map with the targetname shootable_1weap_model
+		3. Add a trigger_damage, over the model/ brushmodel, with the targetname shootable_1weap_trig
+		Note: trigger MUST be trigger_damage otherwise it will not work properly!
+			a. It's also worth ticking EXPLOSION_NO on the trigger_damage so it isn't set off by grenades, this will stop all
+			explosive weapons though so you can decide if you want it on or not
+			b. If you have any problems/ questions message me on Discord xReaction#7551 or twitter @SFLReaction
 	
 */
 
 //Place this at the bottom of your Main() function before the closing bracket (})
 thread shootable1Weapon();
-
 
 //Place these functions at the bottom of your mapname.gsc
 function shootable1Weapon()
