@@ -1,0 +1,28 @@
+/*
+	Important: To use this script you must provide credit to the Authors on your Workshop page of the map you use this in
+	Authors: IceGrenade
+
+	This script changes the skybox on a specified round
+
+	Difficulty to Implement = 3 (This code snippet is not for beginners, some prior knowledge is assumed)[0=Easy-10=Advanced]
+
+	Instructions:
+		Place this script in your mapname.gsc and thread it in the main function.
+*/
+
+//put at the bottom of the Main() function
+thread change_skybox_on_round();
+
+//put at end of mapname.gsc
+function change_skybox_on_round()
+{
+  while(1)
+  {
+    level waittill ("between_round_over");
+    if (level.round_number == 10)
+    {
+      level util::set_lighting_state(1);
+      break;
+    }
+  }
+}
