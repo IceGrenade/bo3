@@ -12,6 +12,7 @@
 	 2. Place any number of script_models in radiant with the target name of 'gold'
 	 3. Change the sound or add sound with alias of 'goldsound' for each shot gold
 	 4. Give all door parts the name of "door_piece" this includes the script_brushmodels and script_models that make the door
+	 5. Make sure the models you are using have a bullet collision enabled. Set this in APE, set the bullet mesh to LOD0 or a lower lod if it seems alright
 */
 
 //Place this at the bottom of your Main() function before the closing bracket (})
