@@ -21,7 +21,3 @@ mapname.zone
 Done!
 
 E.g. I changed mine to zm_fallguys_weapons. Now I will never have broken wallbuys in my maps and players will not need to restart from the 0 purchase bug!
-
-
-Worth Checking out This Video on Adding / Removing Weapons from Vertasea!
-https://www.youtube.com/watch?v=YseEEao4CmA
