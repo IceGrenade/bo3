@@ -1,3 +1,14 @@
+[Edit] There is a new easier fix!
+you can fix it by simply moving one line up higher in your map gsc 😁
+
+move:
+level._zombie_custom_add_weapons =&custom_add_weapons;
+
+above your:
+zm_usermap::main();
+
+[Original Post]
+
 The Wallbuy 0 Bug is a mischevious one that not many people realise is easy to fix
 
 Solution: Rename the level common weapon file and everywhere where it is referenced.
